@@ -7,7 +7,7 @@ const Home = () => {
     <div className="h-full w-full flex flex-col items-center ">
       <Header />
       <Navigation />
-      <div className="w-full flex justify-center items-center flex-col">
+      <div className="w-3/5 flex justify-center items-center flex-col">
         <Outlet />
       </div>
     </div>

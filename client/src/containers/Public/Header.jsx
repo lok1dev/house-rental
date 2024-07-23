@@ -23,7 +23,7 @@ const Header = () => {
   });
 
   return (
-    <div className="w-1100 flex items-center justify-between py-2">
+    <div className="w-3/5 flex items-center justify-between py-2">
       <img
         src={logo}
         alt=""
