@@ -1,15 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { apiGetCategories } from "../../services/category";
-import { formatVietnameseToString } from "../../utils/constant";
-
-const nav = [
-  { name: "Trang chủ", path: "/" },
-  { name: "Cho thuê phòng trọ", path: "/cho-thue-phong-tro" },
-  { name: "Nhà cho thuê", path: "/nha-cho-thue" },
-  { name: "Cho thuê căn hộ", path: "/cho-thue-can-ho" },
-  { name: "Mặt bằng", path: "/mat-bang" },
-];
+import { formatVietnameseToString } from "../../utils/Common/formatVietnameseToString";
 
 const active = "bg-third py-2 px-3";
 const notActive = "py-2 px-3 hover:hover:bg-third";
@@ -28,8 +20,8 @@ const Navigation = () => {
   }, []);
 
   return (
-    <div className="w-screen min-h-[40px] bg-blue-500 flex items-center justify-center">
-      <div className="w-3/5 flex items-center text-white">
+    <div className="w-screen bg-blue-500 flex items-center justify-center">
+      <div className="w-4/5 flex items-center text-white font-semibold text-sm">
         <NavLink
           className={({ isActive }) => (isActive ? active : notActive)}
           to={`/`}

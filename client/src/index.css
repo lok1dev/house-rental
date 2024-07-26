@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.star-item {
+  display: inline-block;
+  color: #fde047;
+  margin-bottom: 4px;
+}

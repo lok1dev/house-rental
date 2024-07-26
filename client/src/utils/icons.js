@@ -6,6 +6,10 @@ import { FaCropSimple } from "react-icons/fa6";
 import { MdApartment } from "react-icons/md";
 import { FaDeleteLeft } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
+import { FaRegHeart } from "react-icons/fa";
+import { BsBookmarkStarFill } from "react-icons/bs";
 
 const icons = {
   CiCirclePlus,
@@ -16,6 +20,10 @@ const icons = {
   MdApartment,
   FaDeleteLeft,
   FaSearch,
+  FaStar,
+  FaHeart,
+  FaRegHeart,
+  BsBookmarkStarFill,
 };
 
 export default icons;
