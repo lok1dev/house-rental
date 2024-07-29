@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import Header from "./Header";
-import { Search, Navigation } from "./index";
+
+import { Search, Header, Navigation } from "../layout/index";
 
 const Home = () => {
   return (

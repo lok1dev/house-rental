@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useRef } from "react";
-import logo from "../../assets/Images/home.png";
-import { Button } from "../../components";
-import icons from "../../utils/icons";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { path } from "../../utils/constant";
 import { useSelector, useDispatch } from "react-redux";
+
+import { Button } from "../common";
+import icons from "../../utils/icons";
+import { path } from "../../utils/constant";
 import * as actions from "../../store/actions";
 
 const { CiCirclePlus } = icons;
@@ -35,7 +35,7 @@ const Header = () => {
       className="w-3/5 flex items-center justify-between py-2"
     >
       <img
-        src={logo}
+        src={`${process.env.PUBLIC_URL}/home.png`}
         alt=""
         className="w-[240px] object-container h-[50px] cursor-pointer"
         onClick={goHome}

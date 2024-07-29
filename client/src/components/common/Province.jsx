@@ -1,5 +1,5 @@
 import { ProvinceBtn } from "./index";
-import { location } from "../utils/constant";
+import { location } from "../../utils/constant";
 
 const Province = () => {
   return (

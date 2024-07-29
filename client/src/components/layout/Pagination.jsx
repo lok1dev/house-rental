@@ -1,7 +1,8 @@
-import { PageNumber } from "../../components";
-import { useSelector } from "react-redux";
-import icons from "../../utils/icons";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+
+import icons from "../../utils/icons";
+import { PageNumber } from "../common";
 
 const { GrLinkNext, GrLinkPrevious } = icons;
 

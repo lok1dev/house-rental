@@ -1,4 +1,4 @@
-import SearchItem from "../../components/SearchItem";
+import { SearchItem } from "../common";
 import icons from "../../utils/icons";
 
 const {

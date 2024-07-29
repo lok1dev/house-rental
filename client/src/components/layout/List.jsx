@@ -1,7 +1,8 @@
 import { useEffect } from "react";
-import { Button, Item } from "../../components/index";
-import { getPosts, getPostsLimit } from "../../store/actions/post";
 import { useDispatch, useSelector } from "react-redux";
+
+import { Button, Item } from "../common";
+import { getPosts, getPostsLimit } from "../../store/actions/post";
 
 const List = ({ page }) => {
   const dispatch = useDispatch();

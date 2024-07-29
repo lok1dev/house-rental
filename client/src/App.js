@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+
 import {
   Home,
   Login,
@@ -8,7 +9,7 @@ import {
   RentalRoom,
   RentalSpace,
   DetailPost,
-} from "./containers/Public";
+} from "./components/pages";
 import { path } from "./utils/constant";
 
 function App() {

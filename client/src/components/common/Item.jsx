@@ -1,7 +1,8 @@
 import { memo, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import icons from "../utils/icons";
-import { formatVietnameseToString } from "../utils/Common/formatVietnameseToString";
+
+import icons from "../../utils/icons";
+import { formatVietnameseToString } from "../../utils/Common/formatVietnameseToString";
 
 const { FaStar, FaHeart, FaRegHeart, BsBookmarkStarFill } = icons;
 
