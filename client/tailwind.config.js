@@ -14,6 +14,9 @@ module.exports = {
         third: "#F73859",
         "overlay-30": "rgba(0,0,0,0.6)",
       },
+      flex: {
+        3: "3 3 0%",
+      },
     },
   },
   plugins: [],

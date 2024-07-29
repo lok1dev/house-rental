@@ -1,8 +1,8 @@
-import { useCallback } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import logo from "../../assets/Images/home.png";
 import { Button } from "../../components";
 import icons from "../../utils/icons";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { path } from "../../utils/constant";
 import { useSelector, useDispatch } from "react-redux";
 import * as actions from "../../store/actions";
@@ -12,18 +12,28 @@ const { CiCirclePlus } = icons;
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const headerRef = useRef();
 
   const { isLoggedIn } = useSelector((state) => state.auth);
+
+  const [searchParams] = useSearchParams();
 
   const goLogin = useCallback((flag) => {
     navigate(path.LOGIN, { state: { flag } });
   });
   const goHome = useCallback(() => {
-    navigate(path.HOME);
+    navigate("/");
   });
 
+  useEffect(() => {
+    headerRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [searchParams.get("page")]);
+
   return (
-    <div className="w-4/5 flex items-center justify-between py-2">
+    <div
+      ref={headerRef}
+      className="w-3/5 flex items-center justify-between py-2"
+    >
       <img
         src={logo}
         alt=""

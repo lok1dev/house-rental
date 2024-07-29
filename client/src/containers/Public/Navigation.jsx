@@ -21,7 +21,7 @@ const Navigation = () => {
 
   return (
     <div className="w-screen bg-blue-500 flex items-center justify-center">
-      <div className="w-4/5 flex items-center text-white font-semibold text-sm">
+      <div className="w-3/5 flex items-center text-white font-semibold text-sm">
         <NavLink
           className={({ isActive }) => (isActive ? active : notActive)}
           to={`/`}

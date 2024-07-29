@@ -1,16 +1,17 @@
 import { useEffect } from "react";
 import { Button, Item } from "../../components/index";
-import { getPosts } from "../../store/actions/post";
+import { getPosts, getPostsLimit } from "../../store/actions/post";
 import { useDispatch, useSelector } from "react-redux";
 
-const List = () => {
+const List = ({ page }) => {
   const dispatch = useDispatch();
 
   const { posts } = useSelector((state) => state.post);
 
   useEffect(() => {
-    dispatch(getPosts());
-  }, []);
+    let offset = page ? +page - 1 : 0;
+    dispatch(getPostsLimit(offset));
+  }, [page]);
 
   return (
     <div className="w-full rounded-md p-2 space-y-4 bg-white shadow-md">
@@ -36,6 +37,7 @@ const List = () => {
                 star={+item?.star}
                 title={item?.title}
                 user={item?.user}
+                id={item?.id}
               />
             );
           })}

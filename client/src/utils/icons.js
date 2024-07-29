@@ -1,15 +1,11 @@
 import { CiCirclePlus } from "react-icons/ci";
-import { MdOutlineNavigateNext } from "react-icons/md";
+import { MdOutlineNavigateNext, MdApartment } from "react-icons/md";
 import { TbReportMoney } from "react-icons/tb";
 import { IoLocationOutline } from "react-icons/io5";
-import { FaCropSimple } from "react-icons/fa6";
-import { MdApartment } from "react-icons/md";
-import { FaDeleteLeft } from "react-icons/fa6";
-import { FaSearch } from "react-icons/fa";
-import { FaStar } from "react-icons/fa";
-import { FaHeart } from "react-icons/fa";
-import { FaRegHeart } from "react-icons/fa";
+import { FaCropSimple, FaDeleteLeft } from "react-icons/fa6";
+import { FaSearch, FaStar, FaRegHeart, FaHeart } from "react-icons/fa";
 import { BsBookmarkStarFill } from "react-icons/bs";
+import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
 
 const icons = {
   CiCirclePlus,
@@ -24,6 +20,8 @@ const icons = {
   FaHeart,
   FaRegHeart,
   BsBookmarkStarFill,
+  GrLinkNext,
+  GrLinkPrevious,
 };
 
 export default icons;
