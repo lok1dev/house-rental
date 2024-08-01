@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 
-import { Search, Header, Navigation } from "../layout/index";
+import { Search, Header, Navigation, Intro, Contact } from "../layout/index";
 
 const Home = () => {
     return (
@@ -10,6 +10,8 @@ const Home = () => {
             <div className="w-3/5 flex justify-center items-center flex-col">
                 <Search />
                 <Outlet />
+                <Intro />
+                <Contact />
             </div>
         </div>
     );

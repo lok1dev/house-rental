@@ -1,7 +1,7 @@
 import express from "express";
-import * as inserController from "../controllers/insert";
+import * as controllers from "../controllers/insert";
 
 const router = express.Router();
-router.post("/", inserController.insert);
+router.post("/", controllers.insert);
 
 export default router;

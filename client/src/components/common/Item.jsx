@@ -2,7 +2,7 @@ import { memo, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 import icons from "../../utils/icons";
-import { formatVietnameseToString } from "../../utils/Common/formatVietnameseToString";
+import { formatVietnameseToString } from "../../utils/Common";
 
 const { FaStar, FaHeart, FaRegHeart, BsBookmarkStarFill } = icons;
 
@@ -60,7 +60,7 @@ const Item = ({ images, title, user, star, description, attributes, address, id 
                     </div>
                 ) : null}
             </Link>
-            <div className="w-3/5 space-y-4 pr-2">
+            <div className="w-3/5 space-y-6 pr-2">
                 <div className="flex justify-between gap-2">
                     <div className="font-bold text-red-500 hover:underline cursor-pointer items-center">
                         {handleStar(+star).length > 0 &&
@@ -71,7 +71,7 @@ const Item = ({ images, title, user, star, description, attributes, address, id 
                     </div>
                     <BsBookmarkStarFill className="pt-1  text-yellow-300 min-w-10 min-h-6" />
                 </div>
-                <div className="flex my-2 items-center justify-between gap-2">
+                <div className="flex my-2 items-center justify-between">
                     <span className="font-bold  text-green-600 flex-3  whitespace-nowrap overflow-hidden text-ellipsis">
                         {attributes?.price}
                     </span>

@@ -2,8 +2,7 @@ import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import { apiGetCategories } from "../../services/category";
-import { formatVietnameseToString } from "../../utils/Common/formatVietnameseToString";
+import { formatVietnameseToString } from "../../utils/Common";
 import * as actions from "../../store/actions";
 
 const active = "bg-third py-2 px-3";
@@ -19,8 +18,8 @@ const Navigation = () => {
     }, []);
 
     return (
-        <div className="w-screen bg-blue-500 flex items-center justify-center">
-            <div className="w-3/5 flex items-center text-white font-semibold text-sm">
+        <div className="w-screen  flex items-center justify-center bg-blue-600">
+            <div className="w-3/5 flex items-center text-white font-semibold text-sm  ">
                 <NavLink className={({ isActive }) => (isActive ? active : notActive)} to={`/`}>
                     Trang chủ
                 </NavLink>

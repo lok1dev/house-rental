@@ -5,13 +5,36 @@ import dotenv from "dotenv";
 
 import db from "../models";
 import chothuecanho from "../../data/chothuecanho.json";
+import chothuephongtro from "../../data/chothuephongtro.json";
+import matbang from "../../data/matbang.json";
+import nhachothue from "../../data/nhachothue.json";
+
 import generateCode from "../utils/generateCode";
 import { dataAcreage, dataPrice } from "../utils/data";
-import getNumberFromString from "../utils/getNumberFromString";
+import { getNumberFromString } from "../utils/common";
 
 dotenv.config();
 
-const dataBody = chothuecanho.body;
+// const dataBody = [
+//     {
+//         body: chothuephongtro.body,
+//         code: "CTPT",
+//         {
+//             body: chothuecanho.body,
+//             code: "CTCH",
+//         },
+//     },
+//     {
+//         body: matbang.body,
+//         code: "MB",
+//     },
+//     {
+//         body: nhachothue.body,
+//         code: "NCT",
+//     },
+// ];
+
+const dataBody = chothuephongtro.body;
 
 const hashPassword = (password) => bcrypt.hashSync(password, bcrypt.genSaltSync(10));
 
@@ -35,7 +58,7 @@ export const insertService = () =>
                     labelCode,
                     address: item?.header?.address,
                     attributesId,
-                    categoryCode: `NCT`,
+                    categoryCode: `CTPT`,
                     description: JSON.stringify(item?.mainContent?.content ?? ""),
                     userId,
                     overviewId,
@@ -100,17 +123,17 @@ export const insertService = () =>
 export const createPricesAndAcreage = () =>
     new Promise((resolve, reject) => {
         try {
-            dataAcreage.forEach(async (item) => {
+            dataAcreage.forEach(async (item, index) => {
                 await db.Acreage.create({
-                    id: v4(),
+                    order: index + 1,
                     code: item.code,
                     value: item.value,
                 });
             });
 
-            dataPrice.forEach(async (item) => {
+            dataPrice.forEach(async (item, index) => {
                 await db.Price.create({
-                    id: v4(),
+                    order: index + 1,
                     code: item.code,
                     value: item.value,
                 });

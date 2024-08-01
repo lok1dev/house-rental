@@ -1,9 +1,9 @@
 import express from "express";
-import * as postController from "../controllers/post";
+import * as controllers from "../controllers/post";
 
 const router = express.Router();
 
-router.get("/all", postController.getPosts);
-router.get("/limit", postController.getPostsLimit);
+router.get("/all", controllers.getPosts);
+router.get("/limit", controllers.getPostsLimit);
 
 export default router;

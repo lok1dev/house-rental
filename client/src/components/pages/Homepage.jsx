@@ -1,16 +1,20 @@
-import { useParams, useSearchParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import { Province, ItemSidebar } from "../common/index";
 import { List, Pagination } from "../layout/index";
 import { text } from "../../utils/constant";
+import * as actions from "../../store/actions";
 
 const Homepage = () => {
-    const [params] = useSearchParams();
+    const dispatch = useDispatch();
 
-    const { categories } = useSelector((state) => state.app);
+    const { categories, prices, acreage } = useSelector((state) => state.app);
 
-    console.log(categories);
+    useEffect(() => {
+        dispatch(actions.getPrices());
+        dispatch(actions.getAcreage());
+    }, []);
 
     return (
         <div className="w-full pt-2 space-y-4">
@@ -21,13 +25,18 @@ const Homepage = () => {
             <Province />
             <div className="flex gap-4">
                 <div className="w-[70%]">
-                    <List page={params.get("page")} />
-                    <Pagination page={params.get("page")} />
+                    <List />
+                    <Pagination />
                 </div>
                 <div className="w-[30%] flex flex-col gap-4">
                     <ItemSidebar title="Danh sách cho thuê" content={categories} />
-                    <ItemSidebar title="Xem theo giá" />
-                    <ItemSidebar title="Xem theo diện tích" />
+                    <ItemSidebar title="Xem theo giá" type="priceCode" content={prices} cols2 />
+                    <ItemSidebar
+                        title="Xem theo diện tích"
+                        type="acreageCode"
+                        content={acreage}
+                        cols2
+                    />
                 </div>
             </div>
         </div>
