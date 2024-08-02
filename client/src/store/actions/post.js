@@ -45,3 +45,25 @@ export const getPostsLimit = (query) => async (dispatch) => {
         });
     }
 };
+
+export const getNewPosts = () => async (dispatch) => {
+    try {
+        const response = await apis.apiGetNewPosts();
+        if (response?.data.err === 0) {
+            dispatch({
+                type: actionTypes.GET_NEW_POSTS,
+                newPosts: response.data.response,
+            });
+        } else {
+            dispatch({
+                type: actionTypes.GET_NEW_POSTS,
+                msg: response.data.msg,
+            });
+        }
+    } catch (error) {
+        dispatch({
+            type: actionTypes.GET_NEW_POSTS,
+            newPosts: null,
+        });
+    }
+};

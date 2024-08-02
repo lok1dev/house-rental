@@ -45,6 +45,7 @@ export const getPrices = () => async (dispatch) => {
         dispatch({
             type: actionTypes.GET_PRICES,
             prices: null,
+            msg: error,
         });
     }
 };
@@ -70,6 +71,32 @@ export const getAcreage = () => async (dispatch) => {
         dispatch({
             type: actionTypes.GET_ACREAGE,
             acreage: null,
+            msg: error,
+        });
+    }
+};
+
+export const getProvinces = () => async (dispatch) => {
+    try {
+        const response = await apis.apiGetProvinces();
+        if (response?.data.err === 0) {
+            dispatch({
+                type: actionTypes.GET_PROVINCE,
+                provinces: response.data.response,
+                msg: "",
+            });
+        } else {
+            dispatch({
+                type: actionTypes.GET_PROVINCE,
+                msg: response.data.msg,
+                provinces: null,
+            });
+        }
+    } catch (error) {
+        dispatch({
+            type: actionTypes.GET_PROVINCE,
+            provinces: null,
+            msg: error,
         });
     }
 };

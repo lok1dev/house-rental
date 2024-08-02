@@ -1,6 +1,6 @@
 import actionTypes from "../actions/actionTypes";
 
-const initState = { msg: "", categories: [], prices: [], acreage: [] };
+const initState = { msg: "", categories: [], prices: [], acreage: [], provinces: [] };
 
 const appReducer = (state = initState, action) => {
     switch (action.type) {
@@ -22,6 +22,13 @@ const appReducer = (state = initState, action) => {
             return {
                 ...state,
                 acreage: action.acreage || [],
+                msg: action.msg || "",
+            };
+
+        case actionTypes.GET_PROVINCE:
+            return {
+                ...state,
+                provinces: action.provinces || [],
                 msg: action.msg || "",
             };
 

@@ -6,3 +6,6 @@ export { default as PageNumber } from "./PageNumber";
 export { default as Province } from "./Province";
 export { default as ProvinceBtn } from "./ProvinceBtn";
 export { default as SearchItem } from "./SearchItem";
+export { default as RelatedPost } from "./RelatedPost";
+export { default as MiniPost } from "./MiniPost";
+export { default as Modal } from "./Modal";
