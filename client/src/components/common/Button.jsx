@@ -1,14 +1,6 @@
 import { memo } from "react";
 
-const Button = ({
-    text,
-    textColor,
-    bgColor,
-    wfull,
-
-    IcAfter,
-    onClick,
-}) => {
+const Button = ({ text, textColor, bgColor, wfull, IcAfter, onClick }) => {
     return (
         <button
             onClick={onClick}

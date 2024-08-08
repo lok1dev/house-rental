@@ -23,7 +23,6 @@ const Rental = () => {
         if (category) {
             setCategoryCode(category.code);
         }
-        console.log(categoryCurrent);
     }, [location]);
 
     return (

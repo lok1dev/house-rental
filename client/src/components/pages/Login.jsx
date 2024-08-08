@@ -94,7 +94,7 @@ const Login = () => {
     };
 
     return (
-        <div className="bg-white min-w-[600px] p-[30px] pb-[100px] rounded-md border shadow space-y-8">
+        <div className="bg-white min-w-[600px] p-[30px] pb-[100px] rounded-md border shadow space-y-8 mt-6">
             <h3 className="font-bold text-2xl">{isRegister ? "Đăng ký tài khoản" : "Đăng nhập"}</h3>
             <div className="w-full space-y-4">
                 {isRegister && (

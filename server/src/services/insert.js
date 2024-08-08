@@ -11,7 +11,7 @@ import nhachothue from "../../data/nhachothue.json";
 
 import generateCode from "../utils/generateCode";
 import { dataAcreage, dataPrice } from "../utils/data";
-import { getNumberFromString } from "../utils/common";
+import { getNumberFromString, getNumberFromStringV2 } from "../utils/common";
 
 dotenv.config();
 
@@ -66,8 +66,8 @@ export const insertService = () =>
                             value: item?.header?.address?.split(",")?.slice(-1)[0].trim(),
                         });
 
-                    let currentAcreage = getNumberFromString(item?.header?.attributes?.acreage);
                     let currentPrice = getNumberFromString(item?.header?.attributes?.price);
+                    let currentAcreage = getNumberFromString(item?.header?.attributes?.acreage);
 
                     await db.Post.create({
                         id: postId,
@@ -89,6 +89,8 @@ export const insertService = () =>
                             (price) => price.max > currentPrice && price.min <= currentPrice
                         )?.code,
                         provinceCode,
+                        priceNumber: getNumberFromStringV2(item?.header?.attributes?.price),
+                        acreageNumber: getNumberFromStringV2(item?.header?.attributes?.acreage),
                     });
 
                     await db.Attribute.create({

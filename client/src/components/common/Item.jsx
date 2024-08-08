@@ -1,5 +1,5 @@
 import { memo, useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import icons from "../../utils/icons";
 import { formatVietnameseToString } from "../../utils/Common";
@@ -9,8 +9,6 @@ const { FaStar, FaHeart, FaRegHeart, BsBookmarkStarFill } = icons;
 const Item = ({ images, title, user, star, description, attributes, address, id }) => {
     const [isHoverHeart, setIsHoverHeart] = useState(false);
     const indexs = [0, 1, 2, 3];
-
-    const navigate = useNavigate();
 
     const handleStar = (star) => {
         let stars = [];
@@ -33,11 +31,11 @@ const Item = ({ images, title, user, star, description, attributes, address, id 
                                     key={index}
                                     src={i}
                                     alt=""
-                                    className="w-[140px] h-[120px] object-cover"
+                                    className="w-[47%] h-[120px] object-cover"
                                 />
                             );
                         })}
-                {images.length > 0 ? (
+                {images.length > 0 && (
                     <div>
                         <span className="text-white bg-overlay-30 rounded-md px-1 absolute bottom-1 left-1">
                             {`${images.length} ảnh`}
@@ -58,7 +56,7 @@ const Item = ({ images, title, user, star, description, attributes, address, id 
                             )}
                         </span>
                     </div>
-                ) : null}
+                )}
             </Link>
             <div className="w-3/5 space-y-6 pr-2">
                 <div className="flex justify-between gap-2">

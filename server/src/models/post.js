@@ -43,6 +43,8 @@ module.exports = (sequelize, DataTypes) => {
             userId: DataTypes.STRING,
             overviewId: DataTypes.STRING,
             imagesId: DataTypes.STRING,
+            priceNumber: DataTypes.FLOAT,
+            acreageNumber: DataTypes.FLOAT,
         },
         {
             sequelize,
