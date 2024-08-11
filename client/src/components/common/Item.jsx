@@ -2,7 +2,7 @@ import { memo, useState } from "react";
 import { Link } from "react-router-dom";
 
 import icons from "../../utils/icons";
-import { formatVietnameseToString } from "../../utils/Common";
+import { formatVietnameseToString } from "../../utils";
 
 const { FaStar, FaHeart, FaRegHeart, BsBookmarkStarFill } = icons;
 
@@ -41,7 +41,7 @@ const Item = ({ images, title, user, star, description, attributes, address, id 
                             {`${images.length} ảnh`}
                         </span>
                         <span
-                            className=" rounded-md px-1 absolute bottom-1 right-7"
+                            className=" rounded-md px-1 absolute bottom-2 right-5"
                             onMouseEnter={() => {
                                 setIsHoverHeart(true);
                             }}

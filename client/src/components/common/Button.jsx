@@ -1,15 +1,15 @@
 import { memo } from "react";
 
-const Button = ({ text, textColor, bgColor, wfull, IcAfter, onClick }) => {
+const Button = ({ text, textColor, bgColor, wfull, IcAfter, onClick, size }) => {
     return (
         <button
             onClick={onClick}
             className={`${
                 wfull && "w-full"
-            } flex items-center justify-center px-4 pt-1 pb-2 ${textColor} outline-none rounded-md ${bgColor} hover:underline`}
+            } flex items-center justify-center gap-1.5 px-2 py-2 ${textColor} outline-none rounded-md ${bgColor} hover:underline`}
         >
             <span>{text}</span>
-            <span>{IcAfter && <IcAfter className=" mt-[5px] ml-1" />}</span>
+            <span>{IcAfter && <IcAfter size={size} className="mt-[2px]" />}</span>
         </button>
     );
 };

@@ -9,6 +9,12 @@ instance.interceptors.request.use(
     function (config) {
         // Do something before request is sent
         // Gắn token vò header
+        let token =
+            window.localStorage.getItem("persist:auth") &&
+            JSON.parse(window.localStorage.getItem("persist:auth"))?.token.slice(1, -1);
+        config.headers = {
+            Authorization: `Bearer ${token}`,
+        };
         return config;
     },
     function (error) {

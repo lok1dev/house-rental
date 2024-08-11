@@ -10,12 +10,11 @@ const actionTypes = {
     GET_NEW_POSTS: "GET_NEW_POSTS",
 
     GET_CATEGORIES: "GET_CATEGORIES",
-
     GET_PRICES: "GET_PRICES",
-
     GET_ACREAGE: "GET_ACREAGE",
-
     GET_PROVINCE: "GET_PROVINCE",
+
+    GET_CURRENT: "GET_CURRENT",
 };
 
 export default actionTypes;

@@ -2,8 +2,8 @@ import { memo, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate, createSearchParams, useLocation } from "react-router-dom";
 
-import { SearchItem, Modal } from "../common";
-import { path } from "../../utils/constant";
+import { SearchItem, Modal } from "./";
+import { path } from "../../constants";
 import icons from "../../utils/icons";
 
 const {
