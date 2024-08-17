@@ -19,7 +19,7 @@ const Rental = () => {
         if (category) {
             setCategoryCode(category.code);
         }
-    }, [location]);
+    }, [location, categories]);
 
     return (
         <div className="w-full pt-2 space-y-4">

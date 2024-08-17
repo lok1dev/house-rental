@@ -7,11 +7,7 @@ const User = () => {
 
     return (
         <div className="flex items-center gap-3 mr-2">
-            <img
-                src={`${process.env.PUBLIC_URL}/user.png`}
-                alt="avatar"
-                className="size-7 object-cover mt-1"
-            />
+            <img src="/user.png" alt="avatar" className="size-7 object-cover mt-1" />
             <div>
                 <p>
                     Xin chào, <strong>{currentData?.name}</strong>

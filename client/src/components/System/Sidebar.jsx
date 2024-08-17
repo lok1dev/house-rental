@@ -15,14 +15,10 @@ const Sidebar = () => {
     const notActiveStyle = "flex items-center gap-2 hover:bg-gray-200 ";
 
     return (
-        <div className="w-[256px] pl-4 pt-4 space-y-8">
+        <div className="w-[256px] pl-10 pt-4 space-y-8">
             <div>
                 <div className="flex items-center gap-4">
-                    <img
-                        src={`${process.env.PUBLIC_URL}/user.png`}
-                        alt=""
-                        className="size-10 object-contain"
-                    />
+                    <img src="/user.png" alt="" className="size-10 object-contain" />
                     <div>
                         <p className="font-bold">{currentData.name}</p>
                         <p className="text-sm">{currentData.phone}</p>
