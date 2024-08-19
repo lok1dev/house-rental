@@ -1,3 +1,4 @@
+import { where } from "sequelize";
 import db from "../models";
 
 // GET USER
@@ -15,6 +16,21 @@ export const getOneUser = (id) =>
                 err: response ? 0 : 1,
                 msg: response ? "OK" : "Failed to get user",
                 response,
+            });
+        } catch (error) {
+            reject(error);
+        }
+    });
+
+export const updateProfile = (payload, id) =>
+    new Promise(async (resolve, reject) => {
+        try {
+            const response = await db.User.update(payload, {
+                where: { id },
+            });
+            resolve({
+                err: response[0] > 0 ? 0 : 1,
+                msg: response[0] > 0 ? "Updated" : "Failed to update user",
             });
         } catch (error) {
             reject(error);

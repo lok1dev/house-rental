@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-
 import { Button, Item } from "../common";
 import { getPostsLimit } from "../../store/actions/post";
 

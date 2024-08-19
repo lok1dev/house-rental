@@ -1,7 +1,8 @@
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 
-import { ItemSidebar, RelatedPost, List, Pagination } from "../../components/Home";
+import { ItemSidebar, List, Pagination } from "../../components/Home";
+import { RelatedPost } from "../../components/common";
 
 const SearchDetail = () => {
     const { categories, prices, acreage } = useSelector((state) => state.app);
@@ -22,7 +23,12 @@ const SearchDetail = () => {
                 </div>
                 <div className="w-[30%] flex flex-col gap-4">
                     <ItemSidebar title="Danh sách cho thuê" content={categories} />
-                    <ItemSidebar title="Xem theo giá" type="priceCode" content={prices} cols2 />
+                    <ItemSidebar
+                        title="Xem theo giá"
+                        type="priceCode"
+                        content={prices}
+                        cols2
+                    />
                     <ItemSidebar
                         title="Xem theo diện tích"
                         type="acreageCode"

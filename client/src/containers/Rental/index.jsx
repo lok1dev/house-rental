@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 
-import { Province, ItemSidebar, RelatedPost, Pagination, List } from "../../components/Home";
+import { Province, ItemSidebar, Pagination, List } from "../../components/Home";
 import { formatVietnameseToString } from "../../utils";
+import { RelatedPost } from "../../components/common";
 
 const Rental = () => {
     const { categories, prices, acreage } = useSelector((state) => state.app);
@@ -35,7 +36,12 @@ const Rental = () => {
                 </div>
                 <div className="w-[30%] flex flex-col gap-4">
                     <ItemSidebar title="Danh sách cho thuê" content={categories} />
-                    <ItemSidebar title="Xem theo giá" type="priceCode" content={prices} cols2 />
+                    <ItemSidebar
+                        title="Xem theo giá"
+                        type="priceCode"
+                        content={prices}
+                        cols2
+                    />
                     <ItemSidebar
                         title="Xem theo diện tích"
                         type="acreageCode"

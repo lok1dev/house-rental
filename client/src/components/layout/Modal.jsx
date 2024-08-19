@@ -1,10 +1,17 @@
 import { memo, useEffect, useState } from "react";
-
 import icons from "../../utils/icons";
 import { getNumbersPrice, getNumbersAcreage } from "../../utils";
 const { GrLinkPrevious } = icons;
 
-const Modal = ({ setShowModal, content, name, handleSubmit, queries, arrMinMax, textDefault }) => {
+const Modal = ({
+    setShowModal,
+    content,
+    name,
+    handleSubmit,
+    queries,
+    arrMinMax,
+    textDefault,
+}) => {
     const [percentStart, setPercentStart] = useState(
         name === "price"
             ? arrMinMax?.priceArr?.[0] ?? 0
@@ -60,7 +67,8 @@ const Modal = ({ setShowModal, content, name, handleSubmit, queries, arrMinMax, 
 
     const handleActive = (code, value) => {
         setActiveEl(code);
-        let arrMinMax = name === "price" ? getNumbersPrice(value) : getNumbersAcreage(value);
+        let arrMinMax =
+            name === "price" ? getNumbersPrice(value) : getNumbersAcreage(value);
         if (arrMinMax.length === 1) {
             if (arrMinMax[0] === 1) {
                 setPercentStart(0);
@@ -126,7 +134,9 @@ const Modal = ({ setShowModal, content, name, handleSubmit, queries, arrMinMax, 
                     >
                         <GrLinkPrevious size={30} />
                     </span>
-                    <h3 className="font-bold text-xl absolute left-[44%]">{name.toUpperCase()}</h3>
+                    <h3 className="font-bold text-xl absolute left-[44%]">
+                        {name.toUpperCase()}
+                    </h3>
                 </div>
 
                 {(name === "category" || name === "province") && (
@@ -163,7 +173,9 @@ const Modal = ({ setShowModal, content, name, handleSubmit, queries, arrMinMax, 
                                         value={item.code}
                                         readOnly
                                         checked={
-                                            queries[`${name}Code`] === item?.code ? true : false
+                                            queries[`${name}Code`] === item?.code
+                                                ? true
+                                                : false
                                         }
                                         onClick={(e) =>
                                             handleSubmit(e, {
@@ -187,7 +199,9 @@ const Modal = ({ setShowModal, content, name, handleSubmit, queries, arrMinMax, 
                             <p className="z-20 top-[-40px] absolute text-xl font-bold text-orange-500">
                                 {percentStart === 100 && percentEnd === 100
                                     ? `Trên  ${convert100toTarget(
-                                          percentEnd <= percentStart ? percentStart : percentEnd
+                                          percentEnd <= percentStart
+                                              ? percentStart
+                                              : percentEnd
                                       )}${
                                           name === "price"
                                               ? " triệu"
@@ -202,7 +216,13 @@ const Modal = ({ setShowModal, content, name, handleSubmit, queries, arrMinMax, 
                                 đến
                                 ${convert100toTarget(
                                     percentEnd <= percentStart ? percentStart : percentEnd
-                                )}${name === "price" ? " triệu" : name === "acreage" ? "m2" : ""}`}
+                                )}${
+                                          name === "price"
+                                              ? " triệu"
+                                              : name === "acreage"
+                                              ? "m2"
+                                              : ""
+                                      }`}
                             </p>
                             <div
                                 id="track"
@@ -270,7 +290,9 @@ const Modal = ({ setShowModal, content, name, handleSubmit, queries, arrMinMax, 
                                     return (
                                         <div
                                             key={item?.code}
-                                            onClick={() => handleActive(item?.code, item?.value)}
+                                            onClick={() =>
+                                                handleActive(item?.code, item?.value)
+                                            }
                                             className={`flex px-4 py-1 bg-gray-200 cursor-pointer rounded-md ${
                                                 item.code === activeEl
                                                     ? "bg-blue-400 text-white"

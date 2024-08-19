@@ -1,5 +1,4 @@
 import { memo } from "react";
-
 import { Button } from "../common";
 import { dataContact } from "../../constants";
 
@@ -21,7 +20,11 @@ const Contact = () => {
                     );
                 })}
             </div>
-            <Button text={"Gửi liên hệ"} textColor={"text-white"} bgColor={"bg-blue-500"} />
+            <Button
+                text={"Gửi liên hệ"}
+                textColor={"text-white"}
+                bgColor={"bg-blue-500"}
+            />
         </div>
     );
 };

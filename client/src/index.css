@@ -68,3 +68,12 @@ input[type="range"]::-ms-thumb {
 input[type="range"]::-ms-thumb:active {
     border: 1px solid green;
 }
+
+.slick-next {
+    right: 35px !important;
+}
+
+.slick-prev {
+    left: 35px !important;
+    z-index: 10 !important;
+}

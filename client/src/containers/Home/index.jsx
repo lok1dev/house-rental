@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 
-import { Province, ItemSidebar, RelatedPost, List, Pagination } from "../../components/Home";
+import { Province, ItemSidebar, List, Pagination } from "../../components/Home";
+import { RelatedPost } from "../../components/common";
 import { text } from "../../constants";
 
 const Home = () => {
@@ -20,7 +21,12 @@ const Home = () => {
                 </div>
                 <div className="w-[30%] flex flex-col gap-4">
                     <ItemSidebar title="Danh sách cho thuê" content={categories} />
-                    <ItemSidebar title="Xem theo giá" type="priceCode" content={prices} cols2 />
+                    <ItemSidebar
+                        title="Xem theo giá"
+                        type="priceCode"
+                        content={prices}
+                        cols2
+                    />
                     <ItemSidebar
                         title="Xem theo diện tích"
                         type="acreageCode"

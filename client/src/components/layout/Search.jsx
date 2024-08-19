@@ -1,7 +1,6 @@
 import { memo, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate, createSearchParams, useLocation } from "react-router-dom";
-
 import { SearchItem, Modal } from "./";
 import { path } from "../../constants";
 import icons from "../../utils/icons";
@@ -65,11 +64,11 @@ const Search = () => {
         queryText.forEach((item) => {
             queryTextObj[item[0]] = item[1];
         });
-        let titleSearch = `${queryTextObj.category ? queryTextObj.category : "Cho thuê tất cả"} ${
-            queryTextObj.province ? `thành phố ${queryTextObj.province}` : ""
-        } ${queryTextObj.price ? `giá ${queryTextObj.price}` : ""} ${
-            queryTextObj.acreage ? `diện tích ${queryTextObj.acreage}` : ""
-        }`;
+        let titleSearch = `${
+            queryTextObj.category ? queryTextObj.category : "Cho thuê tất cả"
+        } ${queryTextObj.province ? `thành phố ${queryTextObj.province}` : ""} ${
+            queryTextObj.price ? `giá ${queryTextObj.price}` : ""
+        } ${queryTextObj.acreage ? `diện tích ${queryTextObj.acreage}` : ""}`;
 
         navigate(
             {
@@ -133,7 +132,10 @@ const Search = () => {
                     className="text-white outline-none px-4 py-[6px]  bg-secondary rounded-lg min-w-[120px] flex items-center gap-2 "
                 >
                     <FaSearch />
-                    <p className=" text-sm font-medium text-center" onClick={handleSearch}>
+                    <p
+                        className=" text-sm font-medium text-center"
+                        onClick={handleSearch}
+                    >
                         Search
                     </p>
                 </button>

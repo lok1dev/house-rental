@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-
 import { menuManager } from "../../constants";
 import * as actions from "../../store/actions";
 import icons from "../../utils/icons";
+import { blobToString } from "../../utils";
 
 const { CiLogout } = icons;
 
@@ -18,10 +18,17 @@ const Sidebar = () => {
         <div className="w-[256px] pl-10 pt-4 space-y-8">
             <div>
                 <div className="flex items-center gap-4">
-                    <img src="/user.png" alt="" className="size-10 object-contain" />
+                    <img
+                        src={
+                            (currentData?.avatar && blobToString(currentData?.avatar)) ||
+                            "/user.png"
+                        }
+                        alt=""
+                        className="size-10 object-cover rounded-full"
+                    />
                     <div>
-                        <p className="font-bold">{currentData.name}</p>
-                        <p className="text-sm">{currentData.phone}</p>
+                        <p className="font-bold">{currentData?.name}</p>
+                        <p className="text-sm">{currentData?.phone}</p>
                     </div>
                 </div>
                 <p className="mt-2">

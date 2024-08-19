@@ -1,6 +1,5 @@
 import { memo } from "react";
 import { Link, createSearchParams, useNavigate, useLocation } from "react-router-dom";
-
 import icons from "../../utils/icons";
 import { formatVietnameseToString } from "../../utils";
 

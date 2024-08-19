@@ -1,7 +1,6 @@
 import { memo } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-
 import { Button } from "../common";
 import icons from "../../utils/icons";
 import { dataIntro } from "../../constants";
@@ -56,7 +55,11 @@ const Intro = () => {
 
             <h3 className="font-bold text-xl pt-10">{dataIntro.question}</h3>
             <p>{dataIntro.answer}</p>
-            <Button text="Đăng tin ngay" textColor={"text-white"} bgColor="bg-[#f73859]" />
+            <Button
+                text="Đăng tin ngay"
+                textColor={"text-white"}
+                bgColor="bg-[#f73859]"
+            />
         </div>
     );
 };

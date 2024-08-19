@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useNavigate, useSearchParams, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-
 import { Button } from "../common";
 import { User } from "./";
 import { path, userMenu } from "../../constants";
